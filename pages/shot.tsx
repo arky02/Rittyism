@@ -241,12 +241,12 @@ const ShotPage = () => {
               src="/images/camera-background.svg"
               alt="camera background"
               height={600}
-              className="w-[1280px] h-[748px]"
+              className="w-[1280px] h-[745px]"
             />
-            <span className="absolute top-[300px] left-[480px]">
+            <span className="absolute top-[350px] left-[480px]">
               리티이즘 로딩중 ... 🚀😻
             </span>
-            <div className="absolute top-1/2 right-[60px] flex flex-col text-[#ffffff] items-center">
+            <div className="absolute top-1/2 right-[60px] flex flex-col text-[#ffffff] items-center -mt-[40px]">
               <span className="text-[18px] font-medium">남은 횟수</span>
               <p className="text-[40px] font-bold">
                 {4 - takenPictures.length}
@@ -255,43 +255,46 @@ const ShotPage = () => {
               <button
                 className="rounded-[18px] border-[2px] border-[#f9f9f9a1] w-[90px] h-[50px] font-bold text-[18px] bg-[#f9f9f938] text-white mt-[40px]"
                 onClick={shotPhoto}
+                disabled={
+                  shotWaitingTime > 사진_1장_촬영_시간 - 사진_미리보기_시간
+                }
               >
                 바로 찍기
               </button>
             </div>
-          </div>
-          <div className="w-[900px] h-[743px] absolute top-[93px]">
-            {takenPictures.length > 0 &&
-              shotWaitingTime > 사진_1장_촬영_시간 - 사진_미리보기_시간 && (
-                // 마지막 찍은 사진 미리보기
-                <img
-                  className="absolute -scale-x-100 z-10 w-[900px] h-[744px] "
-                  src={takenPictures[takenPictures.length - 1]}
-                  width={900}
-                  height={744}
-                  alt="rittyism preview photo"
+            <div className="w-[900px] h-[740px] absolute top-[3px] left-[190px]">
+              {takenPictures.length > 0 &&
+                shotWaitingTime > 사진_1장_촬영_시간 - 사진_미리보기_시간 && (
+                  // 마지막 찍은 사진 미리보기
+                  <img
+                    className="absolute -scale-x-100 z-10 w-[900px] h-[740px] border-1px] border-[#ffffff] rounded-[10px]"
+                    src={takenPictures[takenPictures.length - 1]}
+                    width={900}
+                    height={740}
+                    alt="rittyism preview photo"
+                  />
+                )}
+              <img
+                className="absolute top-[20px] z-10 w-[900px] h-[740px]"
+                src={`/images/rittyism-overlay-rittyImg/${ritty}-ritty/step-${currPhotoNum}.svg`}
+                width={900}
+                height={740}
+                alt="ritty overlay image"
+              ></img>
+              {isBrowser ? (
+                <Camera
+                  ref={camera}
+                  errorMessages={{
+                    noCameraAccessible: undefined,
+                    permissionDenied: undefined,
+                    switchCamera: undefined,
+                    canvas: undefined,
+                  }}
                 />
+              ) : (
+                <></>
               )}
-            <img
-              className="absolute top-[20px] z-10 w-[900px] h-[744px]"
-              src={`/images/rittyism-overlay-rittyImg/${ritty}-ritty/step-${currPhotoNum}.svg`}
-              width={900}
-              height={744}
-              alt="ritty overlay image"
-            ></img>
-            {isBrowser ? (
-              <Camera
-                ref={camera}
-                errorMessages={{
-                  noCameraAccessible: undefined,
-                  permissionDenied: undefined,
-                  switchCamera: undefined,
-                  canvas: undefined,
-                }}
-              />
-            ) : (
-              <></>
-            )}
+            </div>
           </div>
         </>
       ) : currStep === "showResult" ? (
