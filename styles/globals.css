@@ -7,6 +7,11 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/PretendardVariable.woff2");
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -15,7 +20,5 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Pretendard, Arial, Helvetica, sans-serif;
 }
