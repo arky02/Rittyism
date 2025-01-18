@@ -196,24 +196,28 @@ const ShotPage = () => {
           <br /> 사진이 준비됐어요!
         </div>
         <div className="flex flex-col gap-[2px] relative pt-[45px]">
-          {takenPictures.map((el, idx) => (
-            <div className="w-[250px] h-[167px] overflow-hidden" key={idx}>
+          {frameImg && (
+            <>
+              {takenPictures.map((el, idx) => (
+                <div className="w-[250px] h-[167px] overflow-hidden" key={idx}>
+                  <img
+                    className="w-[210px] h-[165px] -scale-x-100 mx-[20px]"
+                    src={el}
+                    width={225}
+                    height={185}
+                    alt="rittyism photo"
+                  />
+                </div>
+              ))}
               <img
-                className="w-[210px] h-[165px] -scale-x-100 mx-[20px]"
-                src={el}
-                width={225}
-                height={185}
-                alt="rittyism photo"
+                src={frameImg}
+                alt="rittyism frame"
+                width={250}
+                height={740}
+                className="absolute w-[270px] h-[740px] top-0"
               />
-            </div>
-          ))}
-          <img
-            src={frameImg}
-            alt="rittyism frame"
-            width={250}
-            height={740}
-            className="absolute w-[270px] h-[740px] top-0"
-          ></img>
+            </>
+          )}
         </div>
         <button
           className="bg-[#f9f9f957] border-[3px] border-[#f9f9f94d] text-[30px] font-bold rounded-[35px] px-[30px] py-[20px] text-white"
