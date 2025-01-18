@@ -26,8 +26,9 @@ const SendPhotoPage = ({
             사진을 받을 휴대전화 번호를 입력해주세요!
           </h3>
           <h5 className="text-[#2c2d3883]">
-            촬영한 리티이즘 사진은 문자메시지의 링크로
-            <span className="text-[#3876F3]"> 당일 저녁까지</span> 전송돼요.
+            촬영한 리티이즘 사진은 추후
+            <span className="text-[#3876F3]"> 카카오톡을 통해 전송</span>
+            됩니다.
           </h5>
         </div>
 
