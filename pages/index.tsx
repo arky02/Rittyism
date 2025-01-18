@@ -42,7 +42,7 @@ const IndexPage = () => {
       <RittyLogo isHero />
       {/* 흰색 Content Section */}
       <div className="color-white w-[880px] h-fit bg-[#ffffff] rounded-[44px] border-[3px] border-[#AEABF9] p-[32px] flex flex-col justify-center pt-[60px] items-center">
-        <div className="">
+        <div className="text-center">
           <h2 className="font-bold text-[26px]">
             당신의 고양이는 어떤 고양이인가요?
           </h2>
