@@ -1,23 +1,28 @@
-import RittyismHeroLogo from "/public/images/rittyism-hero-logo.svg";
 import Image from "next/image";
-import RittyMainLogo from "/public/images/rittyism-logo.svg";
 
 const RittyLogo = ({
   isHero = false,
   isSmall = false,
+  rittyismVersion = "v1",
 }: {
   isHero?: boolean;
   isSmall?: boolean;
+  rittyismVersion?: "v1" | "v2";
 }) => {
   return (
     <div className={`relative w-fit`}>
       <Image
-        src={isHero ? RittyismHeroLogo : RittyMainLogo}
+        src={
+          isHero
+            ? `/images/${rittyismVersion}/rittyism-hero-logo.svg`
+            : `/images/${rittyismVersion}/rittyism-logo.svg`
+        }
         height={isSmall ? (isHero ? 60 : 45) : 110}
+        width={isSmall ? (isHero ? 210 : 220) : 370}
         alt="rittyism"
         className=""
       />
-      {isHero && (
+      {isHero && rittyismVersion === "v1" && (
         <span
           className={`absolute ${
             isSmall
