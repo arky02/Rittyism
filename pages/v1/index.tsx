@@ -58,7 +58,7 @@ const IndexPage = () => {
         </div>
         <Button
           text="이 고양이가 맞아요!"
-          onClick={() => router.push("/frame?ritty=" + selectedRitty)}
+          onClick={() => router.push("/v1/frame?ritty=" + selectedRitty)}
           disabled={selectedRitty === null}
         ></Button>
       </div>

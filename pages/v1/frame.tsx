@@ -79,7 +79,7 @@ const SelectFramePage = () => {
         <Button
           text="리티이즘 프레임을 선택해주세요"
           onClick={() =>
-            router.push("/shot?ritty=" + ritty + "&frame=" + selectedFrame)
+            router.push("/v1/shot?ritty=" + ritty + "&frame=" + selectedFrame)
           }
         ></Button>
       </div>
