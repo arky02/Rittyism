@@ -16,7 +16,7 @@ const SendPhotoPage = ({
   setPhoneNumber,
   phoneNumber,
 }: SendPhotoPageProps) => {
-  const [ruleAccepted, setRuleAccepted] = useState<boolean>(false);
+  const [ruleAccepted, setRuleAccepted] = useState<boolean>(true);
   return (
     <div className="flex flex-col items-center justify-center h-full w-full gap-[40px]">
       <RittyLogo isHero isSmall rittyismVersion="v2"></RittyLogo>
@@ -63,7 +63,7 @@ const SendPhotoPage = ({
         />
         <Button
           text="나의 휴대전화로 리티이즘 보내기!"
-          disabled={!ruleAccepted || phoneNumber.length < 10}
+          // disabled={!ruleAccepted || phoneNumber.length < 10}
           onClick={() => onPhotoSendClick()}
         />
         <Toaster />

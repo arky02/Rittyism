@@ -52,10 +52,10 @@ const ShotPage = () => {
   };
 
   const handleMergeAndSavePhoto = async (files: string[]) => {
-    if (phoneNumber.length !== 13) {
-      toast.error("휴대전화 번호를 형식에 맞게 입력해주세요");
-      return;
-    }
+    // if (phoneNumber.length !== 13) {
+    //   toast.error("휴대전화 번호를 형식에 맞게 입력해주세요");
+    //   return;
+    // }
 
     if (!files || files.length === 0) return;
 
